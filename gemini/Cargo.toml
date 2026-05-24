@@ -1,6 +1,12 @@
 [package]
-name = "gemini"
+name = "cli"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
+
+# A custom profile dedicated specifically to profiling runs
+[profile.profiling]
+inherits = "release"
+debug = true          # Preserve debug symbols so profilers trace line numbers
+strip = false         # Guarantee symbols are not removed after compilation
