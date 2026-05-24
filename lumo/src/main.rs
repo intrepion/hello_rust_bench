@@ -1,3 +1,5 @@
+use hello_bench::hello_static;
+
 fn main() {
-    println!("Hello, world!");
+    println!("{}", hello_static());
 }

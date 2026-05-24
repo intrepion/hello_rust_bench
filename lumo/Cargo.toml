@@ -1,6 +1,14 @@
 [package]
-name = "lumo"
+name = "hello_bench"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
+
+[dev-dependencies]
+criterion = "0.5"
+
+# Tell Cargo that 'benches' contains benchmarks, not tests
+[[bench]]
+name = "hello_bench"
+harness = false
