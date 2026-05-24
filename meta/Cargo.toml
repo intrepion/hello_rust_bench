@@ -1,6 +1,19 @@
 [package]
-name = "meta"
+name = "hello_bench"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
-[dependencies]
+[lib]
+name = "hello_bench"
+path = "src/lib.rs"
+
+[[bin]]
+name = "hello_bench"
+path = "src/main.rs"
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "hello"
+harness = false
