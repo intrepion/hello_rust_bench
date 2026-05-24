@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, world!");
+    println!("{}", your_crate::hello_world());
 }
