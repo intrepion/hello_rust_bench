@@ -1,6 +1,20 @@
 [package]
-name = "grok"
+name = "hello_bench"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "hello"
+harness = false
+
+# For better profiling on macOS
+[profile.release]
+debug = true
+
+[profile.bench]
+debug = true

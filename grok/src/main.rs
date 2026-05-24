@@ -1,3 +1,5 @@
+use hello_bench::*;
+
 fn main() {
-    println!("Hello, world!");
+    hello_println();
 }
