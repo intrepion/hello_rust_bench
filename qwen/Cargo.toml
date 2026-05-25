@@ -1,6 +1,23 @@
 [package]
-name = "qwen"
+name = "hello_profiling"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
-[dependencies]
+[lib]
+name = "hello_profiling"
+path = "src/lib.rs"
+
+[[bin]]
+name = "hello_profiling"
+path = "src/main.rs"
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "hello_bench"
+harness = false
+
+# 🔑 REQUIRED FOR FLAMEGRAPHS
+[profile.release]
+debug = true

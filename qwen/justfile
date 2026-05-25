@@ -1,0 +1,23 @@
+# Install criterion CLI if not present
+setup:
+    cargo install cargo-criterion || true
+
+# Run statistical benchmarks (CI-friendly)
+bench:
+    cargo bench -- --output-format bencher
+
+# Run benchmarks + open HTML report
+bench-report:
+    cargo criterion --output-format=bencher
+    @echo "✅ Report generated at target/criterion/report/index.html"
+
+## macOS profiling (uses dtrace automatically)
+#profile:
+#    sudo cargo flamegraph --bin hello_profiling
+#
+## Profile release build with debug symbols
+#profile-release:
+#    sudo cargo flamegraph --release --bin hello_profiling
+
+profile:
+    cargo instruments --bin hello_profiling -t time --open
