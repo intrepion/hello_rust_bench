@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, world!");
+    cli::compute_v1();
 }

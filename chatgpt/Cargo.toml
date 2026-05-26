@@ -1,6 +1,16 @@
 [package]
-name = "chatgpt"
+name = "cli"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
+
+[dev-dependencies]
+criterion = "0.5"
+
+[[bench]]
+name = "compute_bench"
+harness = false
+
+[profile.bench]
+debug = true
