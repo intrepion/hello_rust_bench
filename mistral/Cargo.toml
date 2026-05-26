@@ -1,6 +1,20 @@
 [package]
-name = "mistral"
+name = "hello_world"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
 
 [dependencies]
+# For tracing (optional, for async profiling)
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tokio = { version = "1.0", features = ["full"] }
+
+[dev-dependencies]
+# For benchmarking
+criterion = "0.4"
+
+# Configure benchmark
+[[bench]]
+name = "hello_benchmark"
+harness = false
